@@ -1,6 +1,8 @@
 let elcards = document.querySelector(".cards");
 let elSelect = document.querySelector(".category-select");
 let cartBtn = document.querySelector("#cartBtn");
+let removeBtn = document.querySelector("#removeBtn");
+let addedItem = document.querySelector(".offcanvas-body");
 
 const getProducts = (url) => {
   fetch(url)
@@ -39,7 +41,6 @@ function renderProducts(products) {
         e.path[1].childNodes[3].textContent,
         e.path[1].childNodes[5].textContent
       );
-      let addedItem = document.querySelector(".offcanvas-body");
       let item = document.createElement("a");
       item.classList.add("card");
       item.classList.add("border");
@@ -53,6 +54,10 @@ function renderProducts(products) {
     card.appendChild(btn);
   });
 }
+
+removeBtn.addEventListener('click', ()=>{
+  addedItem.innerHTML = ''
+})
 
 function renderCategory(categories) {
   categories.forEach((element) => {
