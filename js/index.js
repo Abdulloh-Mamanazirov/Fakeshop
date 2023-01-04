@@ -36,7 +36,6 @@ function renderProducts(products) {
     btn.classList.add("after");
 
     btn.addEventListener("click", (e) => {
-      console.log(e);
       console.log(
         e.path[1].childNodes[3].textContent,
         e.path[1].childNodes[5].textContent
